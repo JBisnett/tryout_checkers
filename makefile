@@ -1,0 +1,2 @@
+test:
+	ruby board.rb
