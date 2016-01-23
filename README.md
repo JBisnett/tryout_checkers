@@ -1,5 +1,7 @@
 # tryout checkers
 
+colors!
+
 we (jbisnett, jeremywrnr) worked on this project for the cs games 2016. the
 challenge was to create a checkers playing AI within an hour.
 
