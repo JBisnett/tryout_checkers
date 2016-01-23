@@ -14,7 +14,7 @@ class Node
         end
     end
     def heuristic
-        Random.rand
+        @board.inject(0){|sum, arr| sum + arr.inject(0){|sum2, x| sum2 + x}}
     end
 end
 
