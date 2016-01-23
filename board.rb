@@ -13,10 +13,18 @@ end
 
 
 class Board
+  attr_accessor :board
   def initialize
-    @board = Array.new(8).map!{ Array.new(8) }
-    @board.each { |x| x.each
-                  { |y| y = [-1, 0, 1].sample } }
+    @board = [
+        [0, -1, 0, -1, 0, -1, 0 ,-1],
+        [-1, 0, -1, 0, -1, 0 ,-1, 0],
+        [0, -1, 0, -1, 0, -1, 0 ,-1],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [1, 0, 1, 0, 1, 0 ,1, 0],
+        [0, 1, 0, 1, 0, 1, 0 ,1],
+        [1, 0, 1, 0, 1, 0 ,1, 0]
+    ]
   end
 
   # takes player, return what boards states are available
@@ -26,8 +34,8 @@ class Board
 
   # print out the current state of the boards
   def to_s
-    @board.each_with_index do |row, i|
-      row.each do |col|
+    @board.each_with_index.map do |row, i|
+      row.map do |col|
         bg = col % 2 ? 107 : 108
         fg = 32
         "x".colorize fg, bg
