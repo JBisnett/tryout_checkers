@@ -2,7 +2,7 @@
 
 class String
   def colorize(fg, bg)
-    "\033[1;#{fg};#{bg}#{self}\033[0;0m"
+    "\033[0;#{fg};#{bg}m#{self}\033[0;0m"
   end
 
   # red on black 31/107
@@ -36,8 +36,8 @@ class Board
   def to_s
     @board.each_with_index.map do |row, i|
       row.map do |col|
-        bg = col % 2 ? 107 : 108
         fg = 32
+        bg = col % 2 ? 107 : 108
         "x".colorize fg, bg
         # red on black 31/107
         # red on white 31/108
